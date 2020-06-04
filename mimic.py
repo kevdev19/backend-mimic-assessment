@@ -20,7 +20,9 @@ better.
 """
 
 __author__ = "Kevin Blount"
-
+# I also recieved help from Instructor Daniel Lomelino
+# and some of the other students during a group
+# zoom session
 import random
 import sys
 
@@ -65,6 +67,12 @@ def print_mimic(mimic_dict, start_word):
         - Randomly select a new word from the next-list
         - Repeat this process 200 times
     """
+    for item in range(200):
+        print(start_word, end=' ')
+        nexts = mimic_dict.get(start_word)
+        if not nexts:
+            nexts = mimic_dict['']
+        start_word = random.choice(nexts)
 
 # Provided main(), calls mimic_dict() and print_mimic()
 
